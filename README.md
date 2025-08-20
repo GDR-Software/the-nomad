@@ -4,45 +4,15 @@
 ## Current Build
 The currently release version of the game is a Demo Alpha Test, so expect lots of bugs. If you do find a bug, please do me a favor and report it, after all, I can only fix bugs that I know about.
 
-## WIP Features
-Here's a complete list of things I plan to put into the game:
-- Desert Sea Shanties
-- Desert Brigs
-- Mercenaries
-- Mercenary Guilds
-- Renown System
-- Stealth Mechanics (cover, hiding spots, essentially a dumbed down version of AC Unity)
-- Executions
-- Zandatsu (ripping out the heart instead of the gatorade)
-- Blade Mode
-- Grenades
-- Fear
-- Shadow Mapping
-- Light Mapping
-- Shadow System
-- Spotlights/Directional Lights
-- Bladed Weapons
-- Counter parries
-
-## Requirements
-### Minimum
-Note that this engine is NOT multithreaded, it will be in the future however when I do a full-scale rewrite
-
-Also note that the minimum spec produced a result of roughly 80-120 fps. But that is only the minimum, on a 3060 it got roughly 800-900 fps.
-
-__CPU__ | __GPU__ | __RAM__ | __OS__
---------|---------|---------|-------
-Intel i5, 2 or more cores | IGPU is fine | 4 Gb | Windows 10 or Ubuntu
-
-### Recommended
-__CPU__ | __GPU__ | __RAM__ | __OS__
---------|---------|---------|-------
-Intel i7, 4 or more cores | NVidia GTX 1050 Ti or better | 16 Gb | Windows 10 or Ubuntu
-
 ## The Technical Details
 Unless you're into programming, this won't really be interesting...
 
-IMPORTANT NOTE: Since this engine is old and uses outdated/deprecated functionality, I will most likely not be adding anything groundbreaking to this version of the engine. A lot of the features that I plan on adding in will most likely not be available until the new engine is in place, so please be patient.
+### Quake3e Changes
+There are the following changes made to the Quake3e engine that were made in order to extend moddability and modernization:
+- Upgraded OpenGL v2.1 renderer to v4.5/6 with Direct State Access, persistently mapped vertex/index/uniform/ssbos(if the hardware allowed it) buffers
+- Implemented shader caching for faster load times and more efficient shader compilation
+- Replaced the Quake 3 VM with AngelScript & improved AngelScript's vector implementation because it was very memory inefficient (saved roughly half a GB by doing this)
+- Replaced Quake 3's sound system with FMOD for easier sound editing and integration, as well as implementing a channel based buffering system akin to the one found in idTech4
 
 ### The Future
 Since Steam is the place where I intend to publish the game in the future, I'll have to do a rewrite of the engine because it uses GPL v2'd code from the Quake III Arena engine.
